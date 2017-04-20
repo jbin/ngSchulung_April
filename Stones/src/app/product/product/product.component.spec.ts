@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductComponent } from './product.component';
 import { Product } from "app/product/product";
+import { By } from "@angular/platform-browser";
+
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
@@ -21,8 +23,10 @@ describe('ProductComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create bindings', () => {
     expect(component).toBeTruthy();
+    const name = fixture.debugElement.query(By.css('span'));
+    expect(name.nativeElement.textContent).toContain('testing');
   });
 
   it('Should raise Price', () => {

@@ -1,7 +1,8 @@
 <p>
-  name: {{product.name}} <br>
+  name: <span>{{product.name}}</span> <br>
   id: {{product.id}} <br>
   price: {{product.price}}
 </p>
-<button (click)="raisePrice()">Preiserhöhung</button>
+<input type="text" #price>
+<button (click)="changePrice(price.value)">Preiserhöhung</button>
 

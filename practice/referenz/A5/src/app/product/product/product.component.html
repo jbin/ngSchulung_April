@@ -1,0 +1,10 @@
+<md-list-item>
+  <md-icon md-list-avatar>label</md-icon>
+  <h3 md-line> {{product.name}} </h3>
+  <p md-line>
+    <strong>id: </strong>{{product.id}}
+    <strong> -  Preis: </strong>{{product.price | brutto:19 | currency:'EUR'}}
+    <strong> -  Gewicht: </strong>{{product.weight}}
+  </p>
+</md-list-item>
+<md-divider></md-divider>

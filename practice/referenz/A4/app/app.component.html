@@ -1,0 +1,4 @@
+<div><strong>Heutiges Datum: </strong>{{heute | date:"fullDate"}}</div>
+<div *ngFor="let product of products | slice:0:3; let isEven = even;" [ngClass]="{'even-style':isEven}">
+  <stn-product [product]="product"></stn-product>
+</div>

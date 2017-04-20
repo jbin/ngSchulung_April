@@ -1,0 +1,11 @@
+<div class="border" [ngStyle]="styleConfig" [ngClass]="{'border-green':product.price<50}">
+  <div><strong>id: </strong>{{product.id}}</div>
+  <div><strong>Name: </strong>{{product.name}}</div>
+  <div><strong>Preis: </strong>{{product.price | brutto:19}}</div>
+  <div><strong>Gewicht: </strong>{{product.weight}}</div>
+  <button (click)="formVisible=!formVisible">toggle form</button>
+  <form action="#" *ngIf="formVisible">
+    <input type="text" #price />
+    <button (click)="changePrice(price.value)">Preis ändern</button>
+  </form>
+</div>

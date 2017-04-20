@@ -1,0 +1,15 @@
+<div>
+  <md-toolbar color="primary">
+    <span>Steinmetz AG</span>
+    <button md-icon-button (click)="start.open()">
+        <md-icon class="md-24" >menu</md-icon>
+      </button>
+    <span style="flex: 1 1 auto;"></span>
+    <span><strong>Heutiges Datum: </strong>{{heute | date:"fullDate"}}</span>
+  </md-toolbar>
+</div>
+<stn-product-form (productCreated)="addProduct($event)"></stn-product-form>
+<stn-product-mdform (productCreated)="addProduct($event)"></stn-product-mdform>
+<md-list>
+  <stn-product *ngFor="let product of products" [product]="product"></stn-product>
+</md-list>

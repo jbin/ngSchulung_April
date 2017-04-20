@@ -1,0 +1,19 @@
+<form [formGroup]="productForm">
+    <md-input-container>
+        <input mdInput name="id" type="text" placeholder="id" [formControl]="id">
+        <md-hint style="color:red" *ngIf="id.errors">Ganzzahliger Wert</md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput name="name" type="text" placeholder="Name" [formControl]="name">
+        <md-hint style="color:red" *ngIf="name.errors">Pflichtangabe</md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput name="price" type="text" placeholder="Preis" [formControl]="price">
+        <md-hint color="red" style="color:red" *ngIf="price.errors">Nur positive Werte</md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput name="weight" type="text" placeholder="Gewicht" [formControl]="weight">
+        <md-hint></md-hint>
+    </md-input-container>
+    <button color="accent" [disabled]="!productForm.valid" md-button (click)="save()">speichern</button>
+</form>

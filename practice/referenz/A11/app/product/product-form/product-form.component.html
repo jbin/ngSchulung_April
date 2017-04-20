@@ -1,0 +1,19 @@
+<form #productForm="ngForm" >
+    <md-input-container>
+        <input mdInput name="id" type="text" placeholder="id" ngModel>
+        <md-hint></md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput name="name" type="text" placeholder="Name" ngModel required #name="ngModel">
+        <md-hint style="color:red" *ngIf="name.errors">Pflichtangabe</md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput name="price" type="text" placeholder="Preis" ngModel pattern="[0-9,]*" #price="ngModel">
+        <md-hint color="red" style="color:red" *ngIf="price.errors">Nur Zahlen</md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput name="weight" type="text" placeholder="Gewicht" ngModel>
+        <md-hint></md-hint>
+    </md-input-container>
+    <button color="accent" [disabled]="!productForm.valid" md-button (click)="save(productForm.value)">speichern</button>
+</form>

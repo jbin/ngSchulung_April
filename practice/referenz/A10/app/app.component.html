@@ -1,0 +1,14 @@
+<div>
+  <md-toolbar color="primary">
+    <span>Steinmetz AG</span>
+    <a [routerLink]="['/products']" md-button>
+      <md-icon class="md-24">list</md-icon> Produktliste
+    </a>
+    <a [routerLink]="['/products/new']" md-button>
+      <md-icon class="md-24">add</md-icon> Neues Produkt
+    </a>
+    <span style="flex: 1 1 auto;"></span>
+    <span><strong>Heutiges Datum: </strong>{{heute | date:"fullDate"}}</span>
+  </md-toolbar>
+</div>
+<router-outlet></router-outlet>

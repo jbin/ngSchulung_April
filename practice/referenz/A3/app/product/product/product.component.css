@@ -1,0 +1,8 @@
+.border{
+    border: 4px maroon solid;
+    padding: 10px;
+}
+
+.border-green{
+    border-color: green;
+}

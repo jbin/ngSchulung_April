@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductComponent } from './product.component';
+import { Product } from "app/product/product";
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
@@ -16,6 +17,7 @@ describe('ProductComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductComponent);
     component = fixture.componentInstance;
+    component.product = new Product(2, 'testing', 18, 54);
     fixture.detectChanges();
   });
 

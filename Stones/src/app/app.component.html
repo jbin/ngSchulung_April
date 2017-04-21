@@ -2,8 +2,6 @@
   {{title}}
 </h1>
 
-<stn-product [product]="productParent" (priceChange)="showPrice($event)">
+<stn-product [product]="product" (priceChange)="showPrice($event)" *ngFor="let product of products">
   <h2>Product</h2>
 </stn-product>
-
-{{productParent.price}}

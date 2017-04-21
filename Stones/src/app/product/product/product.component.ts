@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
   @Output() priceChange: EventEmitter<number> = new EventEmitter<number>();
   @Input() product: Product;
 
+  visible = true;
   styleObject: any = {
     'border': 'solid 3px blue',
     padding: '5px'

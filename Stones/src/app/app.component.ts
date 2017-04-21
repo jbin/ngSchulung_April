@@ -13,7 +13,7 @@ export class AppComponent {
   {
     "id": 0,
     "name": "nisi elit",
-    "price": 85.59,
+    "price": 100,
     "weight": 22
   },
   {

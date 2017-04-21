@@ -3,7 +3,7 @@
 <p [ngStyle]="styleObject" [ngClass]="{'border-green': product.price<50}" *ngIf="visible">
   name: <span>{{product.name}}</span> <br>
   id: {{product.id}} <br>
-  price: {{product.price}}
+  price: {{product.price | brutto:7 | currency:'EUR':true}}
 </p>
 <input type="text" #price>
 <button (click)="changePrice(price.value)">Preiserhöhung</button>

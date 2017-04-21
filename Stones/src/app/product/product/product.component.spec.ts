@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductComponent } from './product.component';
 import { Product } from "app/product/product";
 import { By } from "@angular/platform-browser";
+import { BruttoPipe } from "app/product/brutto.pipe";
 
 
 describe('ProductComponent', () => {
@@ -11,7 +12,7 @@ describe('ProductComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductComponent]
+      declarations: [ProductComponent, BruttoPipe]
     })
       .compileComponents();
   }));
@@ -30,8 +31,7 @@ describe('ProductComponent', () => {
   });
 
   it('Should raise Price', () => {
-    const initPrice = component.product.price;
-    component.raisePrice();
-    expect(component.product.price).toEqual(initPrice + 5);
+    component.changePrice(55);
+    expect(component.product.price).toEqual(55);
   });
 });

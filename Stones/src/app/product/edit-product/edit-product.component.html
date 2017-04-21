@@ -1,0 +1,19 @@
+<form #productForm="ngForm" >
+    <md-input-container>
+        <input mdInput name="id" type="text" placeholder="id">
+        <md-hint></md-hint> 
+    </md-input-container>
+    <md-input-container>
+        <input mdInput name="name" type="text" placeholder="Name">
+        <md-hint></md-hint> 
+    </md-input-container>
+    <md-input-container>
+        <input mdInput name="price" type="text" placeholder="Preis">
+        <md-hint></md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput name="weight" type="text" placeholder="Gewicht">
+        <md-hint></md-hint>
+    </md-input-container>
+    <button color="accent" md-button (click)="save(productForm.value)">speichern</button>
+</form>

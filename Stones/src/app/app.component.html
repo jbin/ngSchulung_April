@@ -1,7 +1,7 @@
-<md-toolbar color="primary">My App</md-toolbar>
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">{{title}}</md-toolbar>
+<stn-edit-product></stn-edit-product>
+
+
 
 <stn-product [product]="product" (priceChange)="showPrice($event)" *ngFor="let product of products; let i = index">
   <h2>Product {{i+1}}</h2>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { Product } from "app/product/product";
 
 @Component({
   selector: 'stn-reactive-product',
@@ -14,6 +15,8 @@ export class ReactiveProductComponent implements OnInit {
   weight: FormControl = new FormControl();
 
   productForm: FormGroup;
+  @Output() productCreated: EventEmitter<Product> = new EventEmitter<Product>();
+
 
   constructor(private builder: FormBuilder) {
     this.productForm = builder.group({
@@ -28,7 +31,7 @@ export class ReactiveProductComponent implements OnInit {
   }
 
   save() {
-    alert(this.productForm.value.name);
+    this.productCreated.emit(this.productForm.value);
   }
 
 }

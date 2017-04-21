@@ -1,5 +1,5 @@
 <ng-content></ng-content>
-<p [ngStyle]="styleObject">
+<p [ngStyle]="styleObject" [ngClass]="{'border-green': product.price<50}">
   name: <span>{{product.name}}</span> <br>
   id: {{product.id}} <br>
   price: {{product.price}}

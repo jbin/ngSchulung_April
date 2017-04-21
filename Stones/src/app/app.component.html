@@ -2,6 +2,6 @@
   {{title}}
 </h1>
 
-<stn-product [product]="product" (priceChange)="showPrice($event)" *ngFor="let product of products">
-  <h2>Product</h2>
+<stn-product [product]="product" (priceChange)="showPrice($event)" *ngFor="let product of products; let i = index">
+  <h2>Product {{i}}</h2>
 </stn-product>

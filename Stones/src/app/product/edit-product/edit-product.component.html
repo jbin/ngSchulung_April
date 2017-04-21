@@ -1,19 +1,21 @@
 <form #productForm="ngForm" >
     <md-input-container>
-        <input mdInput name="id" type="text" placeholder="id">
+        <input mdInput name="id" type="number" placeholder="id" ngModel>
         <md-hint></md-hint> 
     </md-input-container>
     <md-input-container>
-        <input mdInput name="name" type="text" placeholder="Name">
+        <input mdInput name="name" type="text" placeholder="Name" ngModel>
         <md-hint></md-hint> 
     </md-input-container>
     <md-input-container>
-        <input mdInput name="price" type="text" placeholder="Preis">
+        <input mdInput name="price" type="number" placeholder="Preis" ngModel>
         <md-hint></md-hint>
     </md-input-container>
     <md-input-container>
-        <input mdInput name="weight" type="text" placeholder="Gewicht">
+        <input mdInput name="weight" type="number" placeholder="Gewicht" ngModel> 
         <md-hint></md-hint>
     </md-input-container>
     <button color="accent" md-button (click)="save(productForm.value)">speichern</button>
 </form>
+
+{{value | json}}

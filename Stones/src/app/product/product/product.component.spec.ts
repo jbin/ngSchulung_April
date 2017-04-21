@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductComponent } from './product.component';
-import { Product } from "app/product/product";
-import { By } from "@angular/platform-browser";
-import { BruttoPipe } from "app/product/brutto.pipe";
+import { Product } from 'app/product/product';
+import { By } from '@angular/platform-browser';
+import { BruttoPipe } from 'app/product/brutto.pipe';
 
 
 describe('ProductComponent', () => {

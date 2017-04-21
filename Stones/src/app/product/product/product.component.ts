@@ -11,6 +11,11 @@ export class ProductComponent implements OnInit {
   @Output() priceChange: EventEmitter<number> = new EventEmitter<number>();
   @Input() product: Product;
 
+  styleObject: any = {
+    'border': 'solid 3px blue',
+    padding: '5px'
+  };
+
   constructor() { }
 
   ngOnInit() {

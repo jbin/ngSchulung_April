@@ -2,7 +2,7 @@
 <form [formGroup]="productForm">
     <md-input-container>
         <input mdInput name="id" type="text" placeholder="id" [formControl]="id">
-        <md-hint></md-hint>
+        <md-hint *ngIf="id.dirty&&!id.valid">Pflichtfeld</md-hint>
     </md-input-container>
     <md-input-container>
         <input mdInput name="name" type="text" placeholder="Name" [formControl]="name">
@@ -16,5 +16,5 @@
         <input mdInput name="weight" type="text" placeholder="Gewicht" [formControl]="weight">
         <md-hint></md-hint>
     </md-input-container>
-    <button color="accent" md-button (click)="save()">speichern</button>
+    <button color="accent" [disabled]="!productForm.valid" md-button (click)="save()">speichern</button>
 </form>

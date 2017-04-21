@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReactiveProductComponent } from './reactive-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ReactiveProductComponent', () => {
   let component: ReactiveProductComponent;
@@ -8,9 +11,10 @@ describe('ReactiveProductComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReactiveProductComponent ]
+      declarations: [ReactiveProductComponent],
+      imports: [MaterialModule, ReactiveFormsModule, BrowserAnimationsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +26,5 @@ describe('ReactiveProductComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

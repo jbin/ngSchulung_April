@@ -1,8 +1,17 @@
-<md-toolbar color="primary">{{title}}</md-toolbar>
-<stn-edit-product (productCreated)="addProduct($event)"></stn-edit-product>
+<md-toolbar color="primary">
+  <a [routerLink]="['/products']" md-button>
+    <md-icon class="md-24">list</md-icon> Produktliste
+  </a>
+  <a [routerLink]="['/products/new']" md-button>
+    <md-icon class="md-24">add</md-icon> Neues Produkt
+  </a>
+</md-toolbar>
+<router-outlet></router-outlet>
+
+<!--<stn-edit-product (productCreated)="addProduct($event)"></stn-edit-product>
 <stn-reactive-product (productCreated)="addProduct($event)"></stn-reactive-product>
 
 
 <stn-product [product]="product" (priceChange)="showPrice($event)" *ngFor="let product of products; let i = index">
   <h2>Product {{i+1}}</h2>
-</stn-product>
+</stn-product>-->

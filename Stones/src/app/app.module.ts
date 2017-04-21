@@ -5,8 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ProductModule } from 'app/product/product.module';
-import {MaterialModule} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Route } from '@angular/router';
+
+const routes: Array<Route> = [
+  { path: '', redirectTo: 'products', pathMatch: 'full' }
+];
 
 @NgModule({
   declarations: [
@@ -18,7 +23,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpModule,
     ProductModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent],

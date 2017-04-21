@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { Product } from "app/product/product";
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Product } from 'app/product/product';
 
 @Component({
   selector: 'stn-reactive-product',
@@ -9,8 +9,8 @@ import { Product } from "app/product/product";
 })
 export class ReactiveProductComponent implements OnInit {
 
-  id: FormControl = new FormControl();
-  name: FormControl = new FormControl();
+  id: FormControl = new FormControl('', Validators.required);
+  name: FormControl = new FormControl('', [Validators.required, Validators.minLength(2)]);
   price: FormControl = new FormControl();
   weight: FormControl = new FormControl();
 

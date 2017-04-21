@@ -1,10 +1,10 @@
 <form #productForm="ngForm" >
     <md-input-container>
-        <input mdInput name="id" type="number" placeholder="id" ngModel>
-        <md-hint></md-hint> 
+        <input mdInput name="id" type="number" placeholder="id" required ngModel #id="ngModel">
+        <md-hint *ngIf="id.errors" style="color:red">Pflichtfeld</md-hint> 
     </md-input-container>
     <md-input-container>
-        <input mdInput name="name" type="text" placeholder="Name" ngModel>
+        <input mdInput name="name" type="text" minlength="2" required placeholder="Name" ngModel>
         <md-hint></md-hint> 
     </md-input-container>
     <md-input-container>
@@ -15,5 +15,5 @@
         <input mdInput name="weight" type="number" placeholder="Gewicht" ngModel> 
         <md-hint></md-hint>
     </md-input-container>
-    <button color="accent" md-button (click)="save(productForm.value)">speichern</button>
+    <button color="accent" [disabled]="!productForm.valid" md-button (click)="save(productForm.value)">speichern</button>
 </form>

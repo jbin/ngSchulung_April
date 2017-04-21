@@ -2,6 +2,8 @@
   {{title}}
 </h1>
 
-<stn-product [product]="productParent" (priceChange)="showPrice($event)"></stn-product>
+<stn-product [product]="productParent" (priceChange)="showPrice($event)">
+  <h2>Product</h2>
+</stn-product>
 
 {{productParent.price}}

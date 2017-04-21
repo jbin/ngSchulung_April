@@ -1,0 +1,3 @@
+<stn-product [product]="product" (priceChange)="showPrice($event)" *ngFor="let product of products; let i = index">
+  <h2>Product {{i+1}}</h2>
+</stn-product>

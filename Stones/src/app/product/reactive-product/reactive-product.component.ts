@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Product } from 'app/product/product';
+import { ProductService } from "app/product/product.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'stn-reactive-product',
@@ -18,7 +20,7 @@ export class ReactiveProductComponent implements OnInit {
   @Output() productCreated: EventEmitter<Product> = new EventEmitter<Product>();
 
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder, private pService: ProductService, private router: Router) {
     this.productForm = builder.group({
       id: this.id,
       name: this.name,
@@ -32,6 +34,8 @@ export class ReactiveProductComponent implements OnInit {
 
   save() {
     this.productCreated.emit(this.productForm.value);
+    this.pService.saveProduct(this.productForm.value);
+    this.router.navigate(['products']);
   }
 
 }

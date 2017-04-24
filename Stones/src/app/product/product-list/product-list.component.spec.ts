@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductListComponent } from './product-list.component';
+import { ProductComponent } from "app/product/product/product.component";
+import { BruttoPipe } from "app/product/brutto.pipe";
+import { ProductService } from "app/product/product.service";
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -8,9 +11,10 @@ describe('ProductListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductListComponent ]
+      declarations: [ProductListComponent, ProductComponent, BruttoPipe],
+      providers: [ProductService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

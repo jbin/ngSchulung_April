@@ -11,5 +11,6 @@ describe('ProductService', () => {
 
   it('should ...', inject([ProductService], (service: ProductService) => {
     expect(service).toBeTruthy();
+    expect(service.getList().length).toBe(2);
   }));
 });

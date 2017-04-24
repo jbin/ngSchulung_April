@@ -24,7 +24,7 @@ export class ProductService {
 export class MockProductService {
 
 
-  productList: Array<Product> = [
+  productList: Array<Product> =  [
     {
       'id': 0,
       'name': 'nisi elit',
@@ -34,8 +34,8 @@ export class MockProductService {
 
   constructor() { }
 
-  getList(): Array<Product> {
-    return this.productList;
+  getList(): Observable<Array<Product>> {
+    return Observable.of(this.productList);
   }
 
   saveProduct(p: Product) {

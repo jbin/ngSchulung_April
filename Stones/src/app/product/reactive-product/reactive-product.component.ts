@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Product } from 'app/product/product';
-import { ProductService } from "app/product/product.service";
-import { Router } from "@angular/router";
+import { ProductService } from 'app/product/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'stn-reactive-product',

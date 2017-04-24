@@ -1,16 +1,20 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { ProductService } from './product.service';
+import { HttpModule } from '@angular/http';
 
 describe('ProductService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ProductService]
+      providers: [ProductService],
+      imports: [HttpModule]
     });
   });
 
   it('should ...', inject([ProductService], (service: ProductService) => {
     expect(service).toBeTruthy();
-    expect(service.getList().length).toBe(2);
-  }));
+    service.getList().subscribe((products) => {
+      expect(products.length).toBe(2);
+    }
+  )}));
 });

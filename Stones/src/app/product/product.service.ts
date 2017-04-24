@@ -29,3 +29,26 @@ export class ProductService {
   }
 
 }
+
+@Injectable()
+export class MockProductService {
+
+  productList: Array<Product> = [
+    {
+      'id': 0,
+      'name': 'nisi elit',
+      'price': 100,
+      'weight': 22
+    }];
+
+  constructor() { }
+
+  getList(): Array<Product> {
+    return this.productList;
+  }
+
+  saveProduct(p: Product) {
+    this.productList.push(p);
+  }
+
+}

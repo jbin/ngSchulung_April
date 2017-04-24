@@ -4,7 +4,7 @@ import { ReactiveProductComponent } from './reactive-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductService } from "app/product/product.service";
+import { ProductService, MockProductService } from "app/product/product.service";
 import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 
@@ -15,7 +15,7 @@ describe('ReactiveProductComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ReactiveProductComponent],
-      providers: [ProductService],
+      providers: [{provide: ProductService, useClass: MockProductService}],
       imports: [MaterialModule, ReactiveFormsModule, BrowserAnimationsModule, RouterTestingModule]
     })
       .compileComponents();

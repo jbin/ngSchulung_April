@@ -16,6 +16,8 @@ export class ReactiveProductComponent implements OnInit {
   price: FormControl = new FormControl();
   weight: FormControl = new FormControl();
 
+  nameLength: number;
+
   productForm: FormGroup;
   @Output() productCreated: EventEmitter<Product> = new EventEmitter<Product>();
 
@@ -30,6 +32,12 @@ export class ReactiveProductComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.name.valueChanges
+      .filter((value) => value.trim().length > 0)
+      .map((value) => value.trim())
+      .subscribe(
+      (value) => { this.nameLength = value.length; }
+      );
   }
 
   save() {

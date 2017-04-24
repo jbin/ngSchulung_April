@@ -1,37 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Product } from "app/product/product";
+import { Product } from 'app/product/product';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ProductService {
 
-  productList: Array<Product> = [
-    {
-      'id': 0,
-      'name': 'nisi elit',
-      'price': 100,
-      'weight': 22
-    },
-    {
-      'id': 1,
-      'name': 'pariatur aliquip',
-      'price': 122.39,
-      'weight': 21
-    }];
+  api: string = 'http://ec2-35-156-66-92.eu-central-1.compute.amazonaws.com:8080/api/products';
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  getList(): Array<Product> {
-    return this.productList;
+  getList(): Observable<Array<Product>> {
+    return this.http.get(this.api).map((products) => products.json());
   }
 
   saveProduct(p: Product) {
-    this.productList.push(p);
+    return this.http.post(this.api, p);
   }
 
 }
 
 @Injectable()
 export class MockProductService {
+
 
   productList: Array<Product> = [
     {

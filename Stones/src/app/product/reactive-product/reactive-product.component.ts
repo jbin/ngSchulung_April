@@ -42,7 +42,12 @@ export class ReactiveProductComponent implements OnInit {
 
   save() {
     this.productCreated.emit(this.productForm.value);
-    this.pService.saveProduct(this.productForm.value);
+    let product: Product = this.productForm.value;
+    product.id = null;
+    this.pService.saveProduct(product).subscribe(
+      () => alert('Saved'),
+      (err) => alert(JSON.stringify(err))
+    );
     this.router.navigate(['products']);
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'app/product/product';
 import { ProductService } from 'app/product/product.service';
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'stn-product-list',
@@ -8,13 +9,14 @@ import { ProductService } from 'app/product/product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Array<Product> = [];
+  products: Observable<Array<Product>>;
 
   constructor(private pService: ProductService) {
-    this.products = this.pService.getList();
+
   }
 
   ngOnInit() {
+    this.products = this.pService.getList();
   }
 
 }

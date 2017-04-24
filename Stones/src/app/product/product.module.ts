@@ -9,6 +9,7 @@ import { ReactiveProductComponent } from './reactive-product/reactive-product.co
 import { Route, RouterModule } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from 'app/product/product.service';
+import { HttpModule } from '@angular/http';
 
 const routes: Array<Route> = [
   { path: 'products', component: ProductListComponent },
@@ -17,7 +18,8 @@ const routes: Array<Route> = [
 
 @NgModule({
   imports: [
-    CommonModule, MaterialModule, FormsModule, ReactiveFormsModule, RouterModule.forChild(routes)
+    CommonModule, MaterialModule, FormsModule, ReactiveFormsModule, RouterModule.forChild(routes),
+    HttpModule
   ],
   declarations: [ProductComponent, BruttoPipe, EditProductComponent, ReactiveProductComponent, ProductListComponent],
   providers: [ProductService],

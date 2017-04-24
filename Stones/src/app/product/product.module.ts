@@ -10,7 +10,7 @@ import { Route, RouterModule } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Array<Route> = [
-  { path: 'products', component: ProductComponent },
+  { path: 'products', component: ProductListComponent },
   { path: 'products/new', component: ReactiveProductComponent}
 ];
 
